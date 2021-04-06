@@ -1,5 +1,5 @@
 console.log("hello"); // js is connected to html
-const $name = $("<input type='text' id='name' name='name' ></input>")          //"Jabba"; // will become user input later
+let $name = "John" //$("<input type='text' id='name' name='name'><input type='submit' id='submit' value='Submit'>"); //user input stored as const $name
 console.log($name);
 
 
@@ -15,15 +15,15 @@ class Tomagachi {
         this.boredom = 10; 
     }
 
+    intervalTimer(functionToRun,interval){setInterval( function() {functionToRun}, interval); //1000 = 1 second
+    
 // METHODS
 //     timer
-//         every minute add 1 to age
+//         FOR every minute add 1 to age
 //             subtract 1 from hunger, sleep and boredom
-
-
-
-
-
+    }
 }
 const jabba = new Tomagachi($name); //creation of object jabba
 
+function func (){console.log("Hi")};
+jabba.intervalTimer(func,3000);

@@ -24,6 +24,10 @@ step 1.
     2. after opening screen, 
     3. timer that repeats every 1 minute
         after 1 minute age will go up and metrics will go down a random value
+            metrics will change on a graph
+                starts at 10 squares
+                    every time interval square goes opaque
+                        if fed/ sleep/ play square goes back to normal 
     4. after 
             
 //3 screens in total
