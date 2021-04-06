@@ -14,16 +14,29 @@ class Tomagachi {
         this.sleep = 10;
         this.boredom = 10; 
     }
+// METHODS
+//     timer
+//         FOR every minute add 1 to age
+//  
+    // intervalTimer(methodToRun,interval){
+    //     setInterval( function() {methodToRun}, interval) //1000 = 1 second
+    // }
+    
+    intervalTimer(methodToRun,interval){
+        setInterval( methodToRun, interval) //1000 = 1 second
+    }
+    
 
-    intervalTimer(functionToRun,interval){setInterval( function() {functionToRun}, interval); //1000 = 1 second
+    sayHello() {console.log("Hello")}
     
 // METHODS
 //     timer
 //         FOR every minute add 1 to age
 //             subtract 1 from hunger, sleep and boredom
-    }
 }
+
 const jabba = new Tomagachi($name); //creation of object jabba
 
 function func (){console.log("Hi")};
-jabba.intervalTimer(func,3000);
+jabba.intervalTimer(jabba.sayHello,3000);
+jabba.sayHello();
