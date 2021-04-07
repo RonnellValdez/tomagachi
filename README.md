@@ -47,4 +47,10 @@ step 1.
         if you fail to meet requirements this is where you see the headstone for your pet RIP
 
 -------------
-
+// METHODS
+//     timer
+//         FOR every minute add 1 to age
+//  
+    // intervalTimer(methodToRun,interval){
+    //     setInterval( function() {methodToRun}, interval) //1000 = 1 second
+    // }

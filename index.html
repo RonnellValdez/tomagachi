@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- VENDOR CSS -->
+  <link
+      rel="stylesheet"
+      type="text/css"
+     href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="./styles/style.css">
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
@@ -17,16 +22,16 @@
   </h1>
   <h2>Hello, this is your new pet circle. From this day on it's whole life is based on your actions.</h2>
   <img src = "https://media3.s-nbcnews.com/i/newscms/2020_04/3197696/200122-baby-jabba-cs-222p_a3a7a2ebb814a2a9bd370023509bce16.jpg" alt="circle" width="500" height="500">
-  <form>
+  <!-- <form>
     <label for="name">Name your new dependent:</label><br>
     <input type="text" id="name" name="name" ><br>
     <input type="submit" id="submit" value="Submit">
-  </form>
+  </form> -->
   <!-- button for start of game and logging user name info -->
-  <!-- <button id="startButton">begin</button> -->
+  <button id="btn-start" type="button" class="nes-btn is-success">START</button>
   <!-- buttons for metrics -->
-  <button id="feedButton">Feed</button>
-  <button id="lightButton">begin</button>
-  <button id="playButton">begin</button>
+  <button type="button" class="nes-btn is-primary">Eat</button>
+  <button type="button" class="nes-btn is-primary">Sleep</button>
+  <button type="button" class="nes-btn is-primary">Workout</button>
 </body>
 </html>
