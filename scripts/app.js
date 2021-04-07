@@ -22,12 +22,43 @@ class Tomagachi {
     //     setInterval( function() {methodToRun}, interval) //1000 = 1 second
     // }
     
+    // INCREMENTATION
+    
+    
     intervalTimer(methodToRun,interval){
         setInterval( methodToRun, interval) //1000 = 1 second
     }
     
+    subtractMetric(metric){ // method to add values 
+        metric = metric - 1;
+    }
 
-    sayHello() {console.log("Hello")}
+    getOlder(){ // Add 1 to age every 30 seconds
+        this.intervalTimer(this.subtractMetric(this.age), 30000 /*30 seconds*/)
+    }
+
+    getHunger(){ // decrease 1 to hunger every 45 seconds
+        this.intervalTimer(this.subtractMetric(this.hunger), 45000 /*45 seconds*/)
+    }
+
+    getSleepy(){ // decrease 1 to hunger every 45 seconds
+        this.intervalTimer(this.subtractMetric(this.sleep), 50000 /*50 seconds*/)
+    }
+
+    getBored(){ // decrease 1 to hunger every 45 seconds
+        this.intervalTimer(this.subtractMetric(this.boredom), 25000 /*25 seconds*/)
+    }
+
+    //DEATH IFS
+    death(metric){
+        if(metric=0){
+            console.log("pet has died"); //link to death screen
+        }
+    }
+    
+    
+    //sayHello() {console.log("Hello")}
+
     
 // METHODS
 //     timer
