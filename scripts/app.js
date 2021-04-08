@@ -26,6 +26,8 @@ class Tomagachi {
         console.log("game starting");
         //this.getOlder();
         console.log(this.name);
+        this.getOld();
+        console.log(this.age);
 
     }
     
@@ -43,8 +45,14 @@ class Tomagachi {
     //     $(htmlMetric).text(metric);   
     // }
     
+    getOld(){
+        this.age++;
+        $("#displayAge").text(this.age);
+    }
+
+
     getOlder(){ // Add 1 to age every 30 seconds
-        this.intervalTimer(this.age++, 30000 /*30 seconds*/)
+        this.intervalTimer(this.getOld, 30000 /*30 seconds*/)
     }
 
     getHunger(){ // decrease 1 to hunger every 45 seconds
