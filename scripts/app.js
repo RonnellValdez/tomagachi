@@ -10,7 +10,7 @@ class Tomagachi {
     constructor (nameProp){
         this.name = nameProp;
         this.age = 0;
-        $("#displayAge").text(this.age);
+        //$("#displayAge").text(this.age);
         this.hunger = 10; //gives hunger a start of 10
         $("#displayHunger").text(this.hunger);
         this.sleep = 10;
@@ -25,46 +25,69 @@ class Tomagachi {
     main(event){
         console.log("game starting");
         //this.getOlder();
-        console.log(this.name);
-        this.getOld();
+        console.log(this);
+        this.getOlder();
         console.log(this.age);
 
     }
     
-    // INCREMENTATION METHODS
-    intervalTimer(methodToRun,interval){
-        setInterval( methodToRun, interval) //1000 = 1 second
-    }
-    
-    subtractMetric(metric){ // method to add values 
-        metric = metric - 1;
-    }
     //METHOD TO ADD METRICS AND UPDATE DOM
     // updateDom(metric, htmlMetric){
     //     metric++;
     //     $(htmlMetric).text(metric);   
     // }
-    
-    getOld(){
+
+    //ADDING
+    // addAge() {
+    //     this.age++;
+    //     console.log(this.age);
+    // }
+
+    //AGE METHODS
+    getOld=()=>{ //arrow function sets the value of this
+        //console.log("hi");
+       // this.addAge()
         this.age++;
         $("#displayAge").text(this.age);
     }
-
-
     getOlder(){ // Add 1 to age every 30 seconds
-        this.intervalTimer(this.getOld, 30000 /*30 seconds*/)
+        setInterval(this.getOld, 3000 /*30 seconds*/)
+        this.getOld();
     }
 
+    //HUNGER METHODS
+    getHungry=()=>{
+        this.hunger--;
+        $("#displayHunger").text(this.hunger);
+        console.log(this);
+        // return this.age;
+    }
     getHunger(){ // decrease 1 to hunger every 45 seconds
-        this.intervalTimer(this.subtractMetric(this.hunger), 45000 /*45 seconds*/)
+        setInterval(this.getHungry, 3000 /*30 seconds*/)
     }
 
-    getSleepy(){ // decrease 1 to hunger every 45 seconds
-        this.intervalTimer(this.subtractMetric(this.sleep), 50000 /*50 seconds*/)
+    //Sleep METHODS
+    getSleepy=()=>{
+        this.sleep--;
+        $("#displayEnergy").text(this.sleep);
+        console.log(this);
+        // return this.age;
+    }
+    
+    getSleep(){ // decrease 1 to hunger every 45 seconds
+        setInterval(this.getSleepy, 3000 /*30 seconds*/)
     }
 
-    getBored(){ // decrease 1 to hunger every 45 seconds
-        this.intervalTimer(this.subtractMetric(this.boredom), 25000 /*25 seconds*/)
+    //BORED METHODS
+    getBored=()=>{
+        this.boredom--;
+        $("#displayStrength").text(this.boredom);
+        console.log(this);
+        // return this.age;
+    }
+    
+    getBoring(){ // decrease 1 to hunger every 45 seconds
+        setInterval(this.getBored, 3000 /*30 seconds*/)
     }
 
     //DEATH IFS
@@ -100,11 +123,15 @@ class Tomagachi {
 // const test = "monkeys";
 // $("#displayAge").text(test);
 
+//let John; //= new Tomagachi("John");
+
+
 function getInput(){
-    let newName = $("#input-name").val();
-    const character = new Tomagachi(newName);
-    //console.log(newName);
-    character.main();
+    let $newName = $("#input-name").val();
+    let newCharacter = new Tomagachi($newName);
+    console.log($newName);
+    newCharacter.main();
+    //John = newCharacter;
 }
  //creation of object 
 $("#btn-start").on("click", getInput) //on click run function getInput

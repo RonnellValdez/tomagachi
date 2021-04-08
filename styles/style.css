@@ -1,3 +1,14 @@
+body{
+    text-align:center;
+    background-color: #586f7c
+}
 h1{
-    color: blue;
+    color: rgba(0, 0, 255, 0.386);
+    
+}
+img{
+    border-radius: 90px;
+}
+#input-name{
+    margin: 0 auto;
 }
