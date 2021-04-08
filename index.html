@@ -22,16 +22,37 @@
   </h1>
   <h2>Hello, this is your new pet circle. From this day on it's whole life is based on your actions.</h2>
   <img src = "https://media3.s-nbcnews.com/i/newscms/2020_04/3197696/200122-baby-jabba-cs-222p_a3a7a2ebb814a2a9bd370023509bce16.jpg" alt="circle" width="500" height="500">
-  <!-- <form>
-    <label for="name">Name your new dependent:</label><br>
-    <input type="text" id="name" name="name" ><br>
-    <input type="submit" id="submit" value="Submit">
-  </form> -->
+  
+  <!-- user input name -->
+  <div> 
+    <input id="input-name" type="type" placeholder="Name">
+    <!-- <input type="submit" id="submit-name" value="Begin"> -->
+  </div> 
+
   <!-- button for start of game and logging user name info -->
   <button id="btn-start" type="button" class="nes-btn is-success">START</button>
   <!-- buttons for metrics -->
-  <button type="button" class="nes-btn is-primary">Eat</button>
-  <button type="button" class="nes-btn is-primary">Sleep</button>
-  <button type="button" class="nes-btn is-primary">Workout</button>
+  
+  <div id="game-stats" class="container hide">
+    <button id="Eat" type="button" class="nes-btn is-primary">Eat</button>
+    <button id="Sleep" type="button" class="nes-btn is-primary">Sleep</button>
+    <button id="Workout" type="button" class="nes-btn is-primary">Workout</button>
+  </div>
+  
+  <!-- METRICS label-->
+  <div class="metricsLabels">
+    <p id="age">Age:</p>
+    <p id="hunger">Hunger:</p>
+    <p id="strength">Strength:</p>
+    <p id="energy">Energy:</p>
+  </div>
+    
+  <!-- METRICS -->
+  <div class="metricDisplay">
+    <p id="displayAge"></p>
+    <p id="displayHunger"></p>
+    <p id="displayStrength"></p>
+    <p id="displayEnergy"></p>
+  </div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 console.log("hello"); // js is connected to html
-let $name = "John" //$("<input type='text' id='name' name='name'><input type='submit' id='submit' value='Submit'>"); //user input stored as const $name
+//let $name = $("input-name") //$("<input type='text' id='name' name='name'><input type='submit' id='submit' value='Submit'>"); //user input stored as const $name
 //console.log($name);
 
 
@@ -19,9 +19,11 @@ class Tomagachi {
     //main 
     main(event){
         console.log("game starting");
+        this.getOlder;
+
     }
     
-    // INCREMENTATION
+    // INCREMENTATION METHODS
     intervalTimer(methodToRun,interval){
         setInterval( methodToRun, interval) //1000 = 1 second
     }
@@ -31,7 +33,7 @@ class Tomagachi {
     }
 
     getOlder(){ // Add 1 to age every 30 seconds
-        this.intervalTimer(this.subtractMetric(this.age), 30000 /*30 seconds*/)
+        this.intervalTimer(this.updateDom(this.age,$("#displayAge")), 30000 /*30 seconds*/)
     }
 
     getHunger(){ // decrease 1 to hunger every 45 seconds
@@ -53,6 +55,23 @@ class Tomagachi {
         }
     }
     
+    //METHOD TO ADD METRICS AND UPDATE DOM
+    updateDom(metric, $htmlMetric){
+        metric++;
+        $($htmlMetric).text(metric);   
+    }
+
+    // const test = "monkeys";
+// $("#displayAge").text(test);
+
+
+    //ON CLICK BUTTONS ADD METHODS
+        //add 1 to metric
+    addHunger(){
+        $("#Eat").on("click", this.hunger++);
+        $("#hunger").text($);
+    }
+
     
     //sayHello() {console.log("Hello")}
 
@@ -63,6 +82,27 @@ class Tomagachi {
 //             subtract 1 from hunger, sleep and boredom
 }
 
-const jabba = new Tomagachi($name); //creation of object 
+// const test = "monkeys";
+// $("#displayAge").text(test);
 
-$("#btn-start").on("click", jabba.main);
+// const createName = function(){
+//     let seedling = $("#input-name").val();
+//    // seedling = "Hello, " + seedling + " Groot";
+//     //console.log("Hello," + "" + seedling + " Groot");
+//     $("#output-name").text(seedling);
+//     return seedling;
+// };
+
+// let newName = createName();
+// console.log(newName);
+// $("#submit-name").click(function() {
+// createName();
+// });
+
+
+let newName = "John";
+const character = new Tomagachi(newName); //creation of object 
+
+
+$("#btn-start").on("click", character.main);
+console.log(Tomagachi.name);
