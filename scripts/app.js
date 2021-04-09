@@ -43,6 +43,9 @@ class Tomagachi {
        // this.addAge()
         this.age++;
         $("#displayAge").text(this.age);
+        if(this.age == 10){
+            $(this).attr("#avatar", "https://static.wikia.nocookie.net/starwars/images/7/7f/Jabba_SWSB.png/revision/latest?cb=20160910034237");
+        }
     }
     getOlder(){ // Add 1 to age every 30 seconds
         setInterval(this.getOld, 3000 /*30 seconds*/)
@@ -76,7 +79,7 @@ class Tomagachi {
     }
     
     getSleep(){ // decrease 1 to hunger every 45 seconds
-        setInterval(this.getSleepy, 1000 /*30 seconds*/)
+        setInterval(this.getSleepy, 10000 /*30 seconds*/)
     }
     increaseSleep(){
         //console.log(newCharacter.sleep);
@@ -95,8 +98,8 @@ class Tomagachi {
         // return this.age;
     }
     
-    getBoring(){ // decrease 1 to hunger every 45 seconds
-        setInterval(this.getBored, 1000 /*30 seconds*/)
+    getBoring(){ // 
+        setInterval(this.getBored, 30000 /*30 seconds*/)
     }
     
     increaseStrength(){
@@ -114,35 +117,17 @@ class Tomagachi {
             console.log("Game Over");
         }
     }
-    
-    
-
-    // const test = "monkeys";
-// $("#displayAge").text(test);
-
-
-    //ON CLICK BUTTONS ADD METHODS
-        //add 1 to metric
-    // addHunger(){
-    //     $("#Eat").on("click", this.hunger++);
-    //     $("#hunger").text($);
-    // }
-
-    
-    //sayHello() {console.log("Hello")}
-
-    
-// METHODS
-//     timer
-//         FOR every minute add 1 to age
-//             subtract 1 from hunger, sleep and boredom
 }
 
 // const test = "monkeys";
 // $("#displayAge").text(test);
 
 let newCharacter = null; //globalization of object thats going to be created, if not object returns as not create
-
+function animate(){
+    let div = $("#avatar");
+        div.animate({opacity: '0.4'}, "slow");
+        div.animate({opacity: '1'}, "slow");
+}
 
 function getInput(){
     let $newName = $("#input-name").val();
@@ -152,6 +137,7 @@ function getInput(){
     $("#Eat").on("click", newCharacter.increaseHunger);
     $("#Sleep").on("click", newCharacter.increaseSleep);
     $("#Workout").on("click", newCharacter.increaseStrength);
+    $("#Sleep").on("click", animate);
 }
  //creation of object 
 

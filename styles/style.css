@@ -1,6 +1,8 @@
 body{
     text-align:center;
     background-color: #586f7c;
+    /* background-image: url('https://cutewallpaper.org/21/retro-wave-background/Retro-Grid-loop-By-DENIROpro-free-To-Use-GIF.gif');
+    background-size: cover; */
     font-family: 'Press Start 2P', cursive;
 }
 h1{
@@ -13,6 +15,7 @@ img{
 #input-name{
     margin: 0 auto;
 }
+/* BARS */
 #hungerBar{
     position: relative;
     bottom: 125px; 
@@ -22,28 +25,50 @@ img{
 }
 #energyBar{
     position: relative;
-    bottom: 45px;
+    bottom: 30px;
     left: 135px;
     width: 150px;
     height: 25px;
 }
 #strengthBar{
     position: relative;
-    bottom: 85px;
+    bottom: 75px;
     right: 25px;
     width: 150px;
     height: 25px;
 }
-
+/* BUTTONS */
 #Eat{
     position: relative;
-    top: 75px;
-    left: 35px;
+    top: 77px;
+    left: 28px;
     height: 40px;
 }
 #Sleep{
     position: relative;
-    top: 160px;
+    top: 170px;
     right: 100px;
     height: 40px;
+}
+#Workout{
+    position: relative;
+    top: 123px;
+    right: 260px;
+    height: 40px;
+}
+/* LABELS */
+#energy{
+    position: relative;
+    top: 15px;
+
+}
+#strength{
+    position: relative;
+    top: 7px;
+}
+/* AGE */
+#displayAge{
+    position: relative;
+    bottom: 158px;
+    left:50px;
 }
