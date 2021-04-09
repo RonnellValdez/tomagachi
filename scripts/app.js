@@ -55,25 +55,17 @@ class Tomagachi {
     //HUNGER METHODS
     getHungry=()=>{
         this.hunger--;
-        $("#displayHunger").text(this.hunger);
+       // $("#displayHunger").text(this.hunger);
         $("#hungerBar").val(this.hunger);
-        // this.hunger = $("#hungerBar").value;
-        
-        // $("#Eat").on("click",function(event){
-        //     $("#hungerBar").value += 1;
-        // });
-        
-       // console.log(this);
-        // return this.age;
     }
     getHunger(){ // decrease 1 to hunger every 45 seconds
-        setInterval(this.getHungry, 5000 /*30 seconds*/)
+        setInterval(this.getHungry, 10000 /*30 seconds*/)
     }
     increaseHunger(){
         console.log(newCharacter.hunger);
         newCharacter.hunger++;
-        $("#displayHunger").text(newCharacter.hunger);
-      //  $("#hungerBar").val(this.hunger);
+        //$("#displayHunger").text(newCharacter.hunger);
+        $("#hungerBar").val(newCharacter.hunger);
         console.log(newCharacter.hunger);
     }
 
@@ -134,7 +126,7 @@ class Tomagachi {
 // const test = "monkeys";
 // $("#displayAge").text(test);
 
-let newCharacter = null;
+let newCharacter = null; //globalization of object thats going to be created, if not object returns as not create
 
 
 function getInput(){

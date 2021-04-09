@@ -1,6 +1,7 @@
 body{
     text-align:center;
-    background-color: #586f7c
+    background-color: #586f7c;
+    font-family: 'Press Start 2P', cursive;
 }
 h1{
     color: rgba(0, 0, 255, 0.386);
@@ -11,4 +12,8 @@ img{
 }
 #input-name{
     margin: 0 auto;
+}
+#hungerBar{
+    width: 150px;
+    height: 25px;
 }
