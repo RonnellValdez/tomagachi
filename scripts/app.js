@@ -16,7 +16,7 @@ class Tomagachi {
         this.sleep = 10;
         // $("#displayEnergy").text(this.sleep);
         this.boredom = 10; 
-        $("#displayStrength").text(this.boredom);
+       // $("#displayStrength").text(this.boredom);
         
     }
 
@@ -60,11 +60,11 @@ class Tomagachi {
         setInterval(this.getHungry, 10000 /*30 seconds*/)
     }
     increaseHunger(){
-        console.log(newCharacter.hunger);
+        //console.log(newCharacter.hunger);
         newCharacter.hunger++;
         //$("#displayHunger").text(newCharacter.hunger);
         $("#hungerBar").val(newCharacter.hunger);
-        console.log(newCharacter.hunger);
+       // console.log(newCharacter.hunger);
     }
 
     //Sleep METHODS
@@ -79,18 +79,18 @@ class Tomagachi {
         setInterval(this.getSleepy, 1000 /*30 seconds*/)
     }
     increaseSleep(){
-        console.log(newCharacter.sleep);
+        //console.log(newCharacter.sleep);
         newCharacter.sleep++;
         //$("#displayHunger").text(newCharacter.hunger);
         $("#energyBar").val(newCharacter.sleep);
-        console.log(newCharacter.sleep);
+        //console.log(newCharacter.sleep);
     }
 
     //BORED METHODS
     getBored=()=>{
         this.boredom--;
         this.endGame();
-        $("#displayStrength").text(this.boredom);
+        $("#strengthBar").val(this.boredom);
       //  console.log(this);
         // return this.age;
     }
@@ -98,12 +98,20 @@ class Tomagachi {
     getBoring(){ // decrease 1 to hunger every 45 seconds
         setInterval(this.getBored, 1000 /*30 seconds*/)
     }
+    
+    increaseStrength(){
+        //console.log(newCharacter.boredom);
+        newCharacter.boredom++;
+        //$("#displayHunger").text(newCharacter.hunger);
+        $("#strengthBar").val(newCharacter.boredom);
+        //console.log(newCharacter.boredom);
+    }
 
     //DEATH IFS
     endGame(){
         if(this.hunger === 0 || this.boredom === 0 || this.sleep === 0){
-            $("body").text("YOUR PET DIED! refresh page to restart!");
-            console.log("Game OVer");
+            $("body").text("YOU KILLED YOUR PET! refresh page to restart!");
+            console.log("Game Over");
         }
     }
     
@@ -143,6 +151,7 @@ function getInput(){
     newCharacter.main();
     $("#Eat").on("click", newCharacter.increaseHunger);
     $("#Sleep").on("click", newCharacter.increaseSleep);
+    $("#Workout").on("click", newCharacter.increaseStrength);
 }
  //creation of object 
 

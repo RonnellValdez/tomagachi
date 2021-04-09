@@ -14,10 +14,36 @@ img{
     margin: 0 auto;
 }
 #hungerBar{
+    position: relative;
+    bottom: 125px; 
+    left: 310px;
     width: 150px;
     height: 25px;
 }
 #energyBar{
+    position: relative;
+    bottom: 45px;
+    left: 135px;
     width: 150px;
     height: 25px;
+}
+#strengthBar{
+    position: relative;
+    bottom: 85px;
+    right: 25px;
+    width: 150px;
+    height: 25px;
+}
+
+#Eat{
+    position: relative;
+    top: 75px;
+    left: 35px;
+    height: 40px;
+}
+#Sleep{
+    position: relative;
+    top: 160px;
+    right: 100px;
+    height: 40px;
 }
