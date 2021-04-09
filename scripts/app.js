@@ -12,9 +12,9 @@ class Tomagachi {
         this.age = 0;
         //$("#displayAge").text(this.age);
         this.hunger = 10; //gives hunger a start of 10
-        $("#displayHunger").text(this.hunger);
+        // $("#displayHunger").text(this.hunger);
         this.sleep = 10;
-        $("#displayEnergy").text(this.sleep);
+        // $("#displayEnergy").text(this.sleep);
         this.boredom = 10; 
         $("#displayStrength").text(this.boredom);
         
@@ -23,26 +23,23 @@ class Tomagachi {
     
     //main 
     main(event){
-        console.log("game starting");
-        //this.getOlder();
-        console.log(this);
-        this.getOlder();
-        console.log(this.age);
+            console.log("game starting");
+            //this.getOlder();
+            //console.log(this);
+            this.getOlder();
+            console.log(this.age);
+            this.getSleep();
+            this.getHunger();
+            this.getBoring();
+            this.endGame();
+            console.log(this.hunger);
+            // if(this.hunger === 0 || this.sleep === 0 || this.boredom ===0){
+            //     console.log("Pet is dead");
+            // }
+        }
+        
 
-    }
     
-    //METHOD TO ADD METRICS AND UPDATE DOM
-    // updateDom(metric, htmlMetric){
-    //     metric++;
-    //     $(htmlMetric).text(metric);   
-    // }
-
-    //ADDING
-    // addAge() {
-    //     this.age++;
-    //     console.log(this.age);
-    // }
-
     //AGE METHODS
     getOld=()=>{ //arrow function sets the value of this
         //console.log("hi");
@@ -59,18 +56,32 @@ class Tomagachi {
     getHungry=()=>{
         this.hunger--;
         $("#displayHunger").text(this.hunger);
-        console.log(this);
+        $("#hungerBar").val(this.hunger);
+        // this.hunger = $("#hungerBar").value;
+        
+        // $("#Eat").on("click",function(event){
+        //     $("#hungerBar").value += 1;
+        // });
+        
+       // console.log(this);
         // return this.age;
     }
     getHunger(){ // decrease 1 to hunger every 45 seconds
-        setInterval(this.getHungry, 3000 /*30 seconds*/)
+        setInterval(this.getHungry, 5000 /*30 seconds*/)
+    }
+    increaseHunger(){
+        console.log(newCharacter.hunger);
+        newCharacter.hunger++;
+        $("#displayHunger").text(newCharacter.hunger);
+      //  $("#hungerBar").val(this.hunger);
+        console.log(newCharacter.hunger);
     }
 
     //Sleep METHODS
     getSleepy=()=>{
         this.sleep--;
         $("#displayEnergy").text(this.sleep);
-        console.log(this);
+       // console.log(this);
         // return this.age;
     }
     
@@ -82,7 +93,7 @@ class Tomagachi {
     getBored=()=>{
         this.boredom--;
         $("#displayStrength").text(this.boredom);
-        console.log(this);
+      //  console.log(this);
         // return this.age;
     }
     
@@ -91,9 +102,9 @@ class Tomagachi {
     }
 
     //DEATH IFS
-    death(metric){
-        if(metric=0){
-            console.log("pet has died"); //link to death screen
+    endGame(){
+        if(this.hunger === 0 || this.entertained === 0 || this.rest === 0){
+            $("body").text("YOUR GROOT DIED! refresh page to restart!");
         }
     }
     
@@ -123,16 +134,18 @@ class Tomagachi {
 // const test = "monkeys";
 // $("#displayAge").text(test);
 
-//let John; //= new Tomagachi("John");
+let newCharacter = null;
 
 
 function getInput(){
     let $newName = $("#input-name").val();
-    let newCharacter = new Tomagachi($newName);
+    newCharacter = new Tomagachi($newName);
     console.log($newName);
     newCharacter.main();
-    //John = newCharacter;
+    $("#Eat").on("click", newCharacter.increaseHunger);
 }
  //creation of object 
-$("#btn-start").on("click", getInput) //on click run function getInput
+
+$("#btn-start").on("click", getInput)
+ //on click run function getInput
 
