@@ -23,6 +23,7 @@ class Tomagachi {
     //INTRO MANIPULATION
     introChange(){
         $("#intro").text(this.name);
+        $("#prompt").text("the Hutt!");
     }
          
     //AGE METHODS
