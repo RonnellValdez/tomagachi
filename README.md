@@ -1,7 +1,7 @@
 # Tomagachi
 /*
 
-Description: This web app takes in the users name and creates a jabbagachi which has to be taken of in order for it to survive.
+Description: This web app takes in the users name and creates a jabbagachi which has to be taken care of in order for it to survive.
 
 REQUIREMENTS FOR TOMAGACHI
     1. has to have a physical creature/thing on the screen
