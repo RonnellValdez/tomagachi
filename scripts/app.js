@@ -46,14 +46,14 @@ class Tomagachi {
         $("#hungerBar").val(this.hunger);
     }
     getHunger(){ // decrease 1 to hunger every 45 seconds
-        setInterval(this.getHungry, 10000 /*30 seconds*/)
+        setInterval(this.getHungry, 45000)
     }
     increaseHunger(){
-        //console.log(newCharacter.hunger);
         newCharacter.hunger++;
-        //$("#displayHunger").text(newCharacter.hunger);
+        if(newCharacter.hunger > 10){ //accomadate for when value goes above 10
+            newCharacter.hunger = 10;
+        }
         $("#hungerBar").val(newCharacter.hunger);
-       // console.log(newCharacter.hunger);
     }
 
     //Sleep METHODS
@@ -68,11 +68,11 @@ class Tomagachi {
         setInterval(this.getSleepy, 10000 /*30 seconds*/)
     }
     increaseSleep(){
-        //console.log(newCharacter.sleep);
         newCharacter.sleep++;
-        //$("#displayHunger").text(newCharacter.hunger);
+        if(newCharacter.sleep > 10){ //accomadate for when value goes above 10
+            newCharacter.sleep = 10;
+        }
         $("#energyBar").val(newCharacter.sleep);
-        //console.log(newCharacter.sleep);
     }
 
     //BORED METHODS
@@ -87,11 +87,11 @@ class Tomagachi {
     }
     
     increaseBoredom(){
-        //console.log(newCharacter.boredom);
         newCharacter.boredom++;
-        //$("#displayHunger").text(newCharacter.hunger);
+        if(newCharacter.boredom > 10){ //accomadate for when value goes above 10
+            newCharacter.boredom = 10;
+        }
         $("#boredomBar").val(newCharacter.boredom);
-        //console.log(newCharacter.boredom);
     }
 
     //DEATH IF
