@@ -52,6 +52,6 @@ REQUIREMENTS FOR TOMAGACHI
         -dim the image -- make it opaque when function for this is called
         -morphing will be evolution phase of the tomogachi -- at 10 years change the avatar image into something else
         
- ![alt tag](https://imgur.com/a/vTFfvPd "wireframe for main")
+ ![alt tag]([img]https://i.imgur.com/7adLGgb.png[/img])
 
 
