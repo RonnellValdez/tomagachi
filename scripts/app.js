@@ -33,9 +33,6 @@ class Tomagachi {
             this.getBoring();
             this.endGame();
             console.log(this.hunger);
-            // if(this.hunger === 0 || this.sleep === 0 || this.boredom ===0){
-            //     console.log("Pet is dead");
-            // }
         }
         
 
@@ -55,6 +52,7 @@ class Tomagachi {
     //HUNGER METHODS
     getHungry=()=>{
         this.hunger--;
+        this.endGame();
        // $("#displayHunger").text(this.hunger);
         $("#hungerBar").val(this.hunger);
     }
@@ -72,31 +70,40 @@ class Tomagachi {
     //Sleep METHODS
     getSleepy=()=>{
         this.sleep--;
-        $("#displayEnergy").text(this.sleep);
-       // console.log(this);
-        // return this.age;
+        this.endGame();
+        //$("#displayEnergy").text(this.sleep);
+        $("#energyBar").val(this.sleep);
     }
     
     getSleep(){ // decrease 1 to hunger every 45 seconds
-        setInterval(this.getSleepy, 3000 /*30 seconds*/)
+        setInterval(this.getSleepy, 1000 /*30 seconds*/)
+    }
+    increaseSleep(){
+        console.log(newCharacter.sleep);
+        newCharacter.sleep++;
+        //$("#displayHunger").text(newCharacter.hunger);
+        $("#energyBar").val(newCharacter.sleep);
+        console.log(newCharacter.sleep);
     }
 
     //BORED METHODS
     getBored=()=>{
         this.boredom--;
+        this.endGame();
         $("#displayStrength").text(this.boredom);
       //  console.log(this);
         // return this.age;
     }
     
     getBoring(){ // decrease 1 to hunger every 45 seconds
-        setInterval(this.getBored, 3000 /*30 seconds*/)
+        setInterval(this.getBored, 1000 /*30 seconds*/)
     }
 
     //DEATH IFS
     endGame(){
-        if(this.hunger === 0 || this.entertained === 0 || this.rest === 0){
-            $("body").text("YOUR GROOT DIED! refresh page to restart!");
+        if(this.hunger === 0 || this.boredom === 0 || this.sleep === 0){
+            $("body").text("YOUR PET DIED! refresh page to restart!");
+            console.log("Game OVer");
         }
     }
     
@@ -135,6 +142,7 @@ function getInput(){
     console.log($newName);
     newCharacter.main();
     $("#Eat").on("click", newCharacter.increaseHunger);
+    $("#Sleep").on("click", newCharacter.increaseSleep);
 }
  //creation of object 
 
