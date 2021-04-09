@@ -51,7 +51,7 @@ REQUIREMENTS FOR TOMAGACHI
     *animation will be tied to the sleeping button
         -dim the image -- make it opaque when function for this is called
         -morphing will be evolution phase of the tomogachi -- at 10 years change the avatar image into something else
-  
         
+ ![alt tag](https://imgur.com/a/vTFfvPd "wireframe for main")
 
 
