@@ -44,7 +44,7 @@ class Tomagachi {
         this.age++;
         $("#displayAge").text(this.age);
         if(this.age == 10){
-            $(this).attr("#avatar", "https://static.wikia.nocookie.net/starwars/images/7/7f/Jabba_SWSB.png/revision/latest?cb=20160910034237");
+            $("#avatar").attr("src", "https://static.wikia.nocookie.net/starwars/images/7/7f/Jabba_SWSB.png/revision/latest?cb=20160910034237");
         }
     }
     getOlder(){ // Add 1 to age every 30 seconds
