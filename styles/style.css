@@ -19,18 +19,18 @@ img{
 #hungerBar{
     position: relative;
     bottom: 125px; 
-    left: 310px;
+    left: 322px;
     width: 150px;
     height: 25px;
 }
 #energyBar{
     position: relative;
     bottom: 30px;
-    left: 135px;
+    left: 150px;
     width: 150px;
     height: 25px;
 }
-#strengthBar{
+#boredomBar{
     position: relative;
     bottom: 75px;
     right: 25px;
@@ -41,19 +41,19 @@ img{
 #Eat{
     position: relative;
     top: 77px;
-    left: 28px;
+    left: 10px;
     height: 40px;
 }
 #Sleep{
     position: relative;
     top: 170px;
-    right: 100px;
+    right: 115px;
     height: 40px;
 }
-#Workout{
+#Play{
     position: relative;
     top: 123px;
-    right: 260px;
+    right: 229px;
     height: 40px;
 }
 /* LABELS */
@@ -62,7 +62,7 @@ img{
     top: 15px;
 
 }
-#strength{
+#boredom{
     position: relative;
     top: 7px;
 }

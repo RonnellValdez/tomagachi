@@ -25,7 +25,7 @@
   <h1>
   Project 0 
   </h1>
-  <h2>Hello, this is your new pet hutt. From this day on it's whole life is based on your actions.</h2>
+  <h2 id="intro">Hello, this is your new pet hutt. From this day on it's whole life is based on your actions.</h2>
   <img id="avatar" src = "https://media3.s-nbcnews.com/i/newscms/2020_04/3197696/200122-baby-jabba-cs-222p_a3a7a2ebb814a2a9bd370023509bce16.jpg" alt="circle" width="400px" height="400px">
   
   <!-- user input name -->
@@ -40,14 +40,14 @@
   <div id="game-stats" class="container hide">
     <button id="Eat" type="button" class="nes-btn is-primary">Eat</button>
     <button id="Sleep" type="button" class="nes-btn is-primary">Sleep</button>
-    <button id="Workout" type="button" class="nes-btn is-primary">Workout</button>
+    <button id="Play" type="button" class="nes-btn is-primary">Play</button>
   </div>
   
   <!-- METRICS label-->
   <div class="metricsLabels">
     <p id="age">Age: </p>
     <p id="hunger">Hunger:</p>
-    <p id="strength">Strength:</p>
+    <p id="boredom">Boredom:</p>
     <p id="energy">Energy:</p>
   </div>
     
@@ -55,14 +55,14 @@
   <div class="metricDisplay">
     <p id="displayAge"></p>
     <p id="displayHunger"></p>
-    <p id="displayStrength"></p>
+    <p id="displayBoredom"></p>
     <p id="displayEnergy"></p>
   </div>
   <!-- PROGRESS BAR -- max is max number, value is what it starts at -->
   <div class = "progressBars">
     <progress class="nes-progress is-primary" id="hungerBar" max="10" value="10"></progress>
     <progress class="nes-progress is-primary" id="energyBar" max="10" value="10"></progress>
-    <progress class="nes-progress is-primary" id="strengthBar" max="10" value="10"></progress>
+    <progress class="nes-progress is-primary" id="boredomBar" max="10" value="10"></progress>
 
   </div>
 </body>

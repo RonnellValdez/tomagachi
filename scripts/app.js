@@ -1,46 +1,32 @@
-console.log("hello"); // js is connected to html
-//let $name = $("input-name") //$("<input type='text' id='name' name='name'><input type='submit' id='submit' value='Submit'>"); //user input stored as const $name
-//console.log($name);
-
-
-
-
-
 class Tomagachi {
     constructor (nameProp){
         this.name = nameProp;
         this.age = 0;
-        //$("#displayAge").text(this.age);
-        this.hunger = 10; //gives hunger a start of 10
-        // $("#displayHunger").text(this.hunger);
+        this.hunger = 10; 
         this.sleep = 10;
-        // $("#displayEnergy").text(this.sleep);
         this.boredom = 10; 
-       // $("#displayStrength").text(this.boredom);
-        
     }
 
     
     //main 
     main(event){
             console.log("game starting");
-            //this.getOlder();
-            //console.log(this);
+            this.introChange();
             this.getOlder();
             console.log(this.age);
             this.getSleep();
             this.getHunger();
             this.getBoring();
             this.endGame();
-            console.log(this.hunger);
         }
-        
-
-    
+  
+    //INTRO MANIPULATION
+    introChange(){
+        $("#intro").text(this.name);
+    }
+         
     //AGE METHODS
     getOld=()=>{ //arrow function sets the value of this
-        //console.log("hi");
-       // this.addAge()
         this.age++;
         $("#displayAge").text(this.age);
         if(this.age == 10){
@@ -93,37 +79,33 @@ class Tomagachi {
     getBored=()=>{
         this.boredom--;
         this.endGame();
-        $("#strengthBar").val(this.boredom);
-      //  console.log(this);
-        // return this.age;
+        $("#boredomBar").val(this.boredom);
     }
     
     getBoring(){ // 
         setInterval(this.getBored, 30000 /*30 seconds*/)
     }
     
-    increaseStrength(){
+    increaseBoredom(){
         //console.log(newCharacter.boredom);
         newCharacter.boredom++;
         //$("#displayHunger").text(newCharacter.hunger);
-        $("#strengthBar").val(newCharacter.boredom);
+        $("#boredomBar").val(newCharacter.boredom);
         //console.log(newCharacter.boredom);
     }
 
-    //DEATH IFS
+    //DEATH IF
     endGame(){
         if(this.hunger === 0 || this.boredom === 0 || this.sleep === 0){
-            $("body").text("YOU KILLED YOUR PET! refresh page to restart!");
+            $("body").text("YOU KILLED THE HUTT! refresh page to restart!");
             console.log("Game Over");
         }
     }
 }
 
-// const test = "monkeys";
-// $("#displayAge").text(test);
-
 let newCharacter = null; //globalization of object thats going to be created, if not object returns as not create
-function animate(){
+
+function animate(){ // function to create animation that will make image opaque -- will tie to sleep button
     let div = $("#avatar");
         div.animate({opacity: '0.4'}, "slow");
         div.animate({opacity: '1'}, "slow");
@@ -131,15 +113,14 @@ function animate(){
 
 function getInput(){
     let $newName = $("#input-name").val();
-    newCharacter = new Tomagachi($newName);
+    newCharacter = new Tomagachi($newName); //new character value is now set to the value from class
     console.log($newName);
-    newCharacter.main();
+    newCharacter.main(); 
     $("#Eat").on("click", newCharacter.increaseHunger);
     $("#Sleep").on("click", newCharacter.increaseSleep);
-    $("#Workout").on("click", newCharacter.increaseStrength);
+    $("#Play").on("click", newCharacter.increaseBoredom);
     $("#Sleep").on("click", animate);
 }
- //creation of object 
 
 $("#btn-start").on("click", getInput)
  //on click run function getInput
